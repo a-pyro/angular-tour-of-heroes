@@ -12,7 +12,7 @@ export class HeroesComponent {
   heroes = HEROES;
   selectedHero?: Hero;
 
-  constructor(public emojiService: EmojiService) {}
+  constructor(protected emojiService: EmojiService) {}
 
   onSelect(hero: Hero) {
     this.selectedHero = hero;
@@ -20,9 +20,5 @@ export class HeroesComponent {
   changeEmoji(s: string) {
     if (!this.selectedHero) return;
     this.selectedHero.emoji = s;
-  }
-
-  ngOnDestroy() {
-    this.emojiService.closePicker();
   }
 }

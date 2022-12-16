@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { EmojiService } from 'src/app/services/emoji.service';
 
 @Component({
   selector: 'app-emoji-picker',
@@ -10,5 +11,10 @@ export class EmojiPickerComponent {
 
   addEmoji(event: { emoji: { native: string } }) {
     this.emitEmoji.emit(event.emoji.native);
+  }
+  constructor(protected emojiService: EmojiService) {}
+
+  ngOnDestroy() {
+    this.emojiService.closePicker();
   }
 }
