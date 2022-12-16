@@ -1,4 +1,3 @@
-import { EmojiService } from './../../services/emoji.service';
 import { Component } from '@angular/core';
 import { HEROES } from 'src/app/data/mock-heroes';
 import { Hero } from 'src/app/types/hero';
@@ -12,13 +11,7 @@ export class HeroesComponent {
   heroes = HEROES;
   selectedHero?: Hero;
 
-  constructor(protected emojiService: EmojiService) {}
-
   onSelect(hero: Hero) {
     this.selectedHero = hero;
-  }
-  changeEmoji(s: string) {
-    if (!this.selectedHero) return;
-    this.selectedHero.emoji = s;
   }
 }
