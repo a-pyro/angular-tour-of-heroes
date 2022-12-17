@@ -30,9 +30,12 @@ export class HeroDetailComponent {
 
   ngOnInit() {
     const id = this.currentRoute.snapshot.paramMap.get('id');
+    console.log(id);
     if (!id) return;
     this.heroService.getHeroById(+id).subscribe((hero) => {
       this.hero = hero;
+      console.log(hero?.name);
+      console.log(this.hero?.name);
     });
   }
 }

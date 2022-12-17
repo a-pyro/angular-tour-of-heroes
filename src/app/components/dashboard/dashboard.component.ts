@@ -1,6 +1,7 @@
 import { Hero } from './../../types/hero';
 import { Component } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,12 @@ import { HeroService } from 'src/app/services/hero.service';
 export class DashboardComponent {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private router: Router) {}
+
+  onClick(hero: Hero) {
+    this.heroService.setHero(hero);
+    this.router.navigate(['/heroes/', hero.id]);
+  }
 
   ngOnInit() {
     this.heroService
