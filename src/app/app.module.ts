@@ -10,8 +10,19 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 @NgModule({
-  declarations: [AppComponent, HeroesComponent, EmojiPickerComponent, HeroDetailComponent, MessagesComponent],
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    EmojiPickerComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    NavBarComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, PickerModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { EmojiService } from 'src/app/services/emoji.service';
 import { Hero } from 'src/app/types/hero';
+import { Location } from '@angular/common';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EmojiService } from 'src/app/services/emoji.service';
+import { HeroService } from 'src/app/services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -8,12 +11,28 @@ import { Hero } from 'src/app/types/hero';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent {
-  @Input() hero?: Hero;
-
-  constructor(protected emojiService: EmojiService) {}
+  hero?: Hero;
+  constructor(
+    protected emojiService: EmojiService,
+    protected heroService: HeroService,
+    private location: Location,
+    private currentRoute: ActivatedRoute
+  ) {}
 
   changeEmoji(s: string) {
-    if (!this.hero) return;
-    this.hero.emoji = s;
+    if (!this.heroService.selectedHero) return;
+    this.heroService.selectedHero.emoji = s;
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  ngOnInit() {
+    const id = this.currentRoute.snapshot.paramMap.get('id');
+    if (!id) return;
+    this.heroService.getHeroById(+id).subscribe((hero) => {
+      this.hero = hero;
+    });
   }
 }

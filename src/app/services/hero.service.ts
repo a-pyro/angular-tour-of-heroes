@@ -9,11 +9,21 @@ import { Observable, of } from 'rxjs';
 })
 export class HeroService {
   heroes: Hero[] = HEROES;
+  selectedHero?: Hero;
 
   constructor(private messagesService: MessagesService) {}
 
   getHeroes(): Observable<Hero[]> {
     this.messagesService.add('HeroService: fetched heroes');
     return of(this.heroes);
+  }
+
+  getHeroById(id: number): Observable<Hero | undefined> {
+    this.messagesService.add(`HeroService: fetched hero id=${id}`);
+    return of(this.heroes.find((hero) => hero.id === id));
+  }
+
+  setHero(hero: Hero) {
+    this.selectedHero = hero;
   }
 }

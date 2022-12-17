@@ -3,7 +3,7 @@
   <ul class="heroes">
     <li *ngFor="let hero of heroes">
       <button
-        [class.selected]="hero === selectedHero"
+        [class.selected]="hero === heroService.selectedHero"
         class="mt-0 ml-0 pr-2"
         type="button"
         (click)="onSelect(hero)"
@@ -14,5 +14,4 @@
       </button>
     </li>
   </ul>
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 </div>

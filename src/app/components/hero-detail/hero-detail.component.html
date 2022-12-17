@@ -1,20 +1,21 @@
-<div *ngIf="hero; else selectHero">
-  <h2 class="mt-0">{{ hero.name | uppercase }} details!</h2>
+<div *ngIf="heroService.selectedHero">
+  <h2 class="mt-0">{{ heroService.selectedHero.name | uppercase }} details!</h2>
   <label for="name">Hero Name: </label>
-  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
+  <input
+    id="name"
+    [(ngModel)]="heroService.selectedHero.name"
+    placeholder="name"
+  />
   <div>
     <div>
       <button (click)="emojiService.togglePicker()">
-        Change emoji {{ hero.emoji }}
+        Change emoji {{ heroService.selectedHero.emoji }}
       </button>
     </div>
     <app-emoji-picker
       *ngIf="emojiService.showPicker"
       (emitEmoji)="changeEmoji($event)"
     ></app-emoji-picker>
+    <button (click)="goBack()">Back</button>
   </div>
 </div>
-
-<ng-template #selectHero>
-  <div>👈🏻 Please select a hero</div>
-</ng-template>
