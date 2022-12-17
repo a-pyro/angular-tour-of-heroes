@@ -5,6 +5,7 @@
     id="name"
     [(ngModel)]="heroService.selectedHero.name"
     placeholder="name"
+    (ngModelChange)="heroService.saveHeroes()"
   />
   <div>
     <div>

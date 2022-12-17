@@ -22,6 +22,7 @@ export class HeroDetailComponent {
   changeEmoji(s: string) {
     if (!this.heroService.selectedHero) return;
     this.heroService.selectedHero.emoji = s;
+    this.heroService.saveHeroes();
   }
 
   goBack() {
