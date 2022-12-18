@@ -14,7 +14,6 @@ export class DashboardComponent {
   constructor(private heroService: HeroService, private router: Router) {}
 
   onClick(hero: Hero) {
-    this.heroService.setHero(hero);
     this.router.navigate(['/heroes/', hero.id]);
   }
 

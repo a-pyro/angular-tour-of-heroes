@@ -11,7 +11,7 @@ import { HeroService } from 'src/app/services/hero.service';
   styleUrls: ['./hero-detail.component.css'],
 })
 export class HeroDetailComponent {
-  hero?: Hero;
+  protected hero?: Hero;
   constructor(
     protected emojiService: EmojiService,
     protected heroService: HeroService,
@@ -19,24 +19,26 @@ export class HeroDetailComponent {
     private currentRoute: ActivatedRoute
   ) {}
 
-  changeEmoji(s: string) {
-    if (!this.heroService.selectedHero) return;
-    this.heroService.selectedHero.emoji = s;
-    this.heroService.saveHeroes();
-  }
+  // changeEmoji(s: string) {
+  //   if (!this.heroService.selectedHero) return;
+  //   this.heroService.selectedHero.emoji = s;
+  // }
 
   goBack() {
     this.location.back();
+  }
+
+  save() {
+    if (!this.hero) return;
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
   }
 
   ngOnInit() {
     const id = this.currentRoute.snapshot.paramMap.get('id');
     console.log(id);
     if (!id) return;
-    this.heroService.getHeroById(+id).subscribe((hero) => {
+    this.heroService.getHero(+id).subscribe((hero) => {
       this.hero = hero;
-      console.log(hero?.name);
-      console.log(this.hero?.name);
     });
   }
 }
