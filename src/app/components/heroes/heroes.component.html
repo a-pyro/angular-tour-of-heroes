@@ -13,14 +13,14 @@
           style="cursor: pointer"
           class="delete align-self-center mx-1"
           title="delete hero"
-          (click)="delete(hero)"
+          (click)="deleteHero(hero)"
         >
           🚮
         </span>
       </li>
     </ul>
   </div>
-  <div *ngIf="">
+  <div>
     <h2>Add new Hero</h2>
     <app-add-hero (heroEmit)="add($event)"> </app-add-hero>
   </div>

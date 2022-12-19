@@ -1,4 +1,4 @@
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
 import { Hero } from 'src/app/types/hero';
@@ -25,7 +25,7 @@ export class HeroesComponent {
     this.heroService.addHero(hero).subscribe((h) => this.heroes.push(h));
   }
 
-  delete(hero: Hero) {
+  deleteHero(hero: Hero) {
     this.heroService.deleteHero(hero).subscribe(() => {
       this.heroes = this.heroes.filter((h) => h.id !== hero.id);
     });

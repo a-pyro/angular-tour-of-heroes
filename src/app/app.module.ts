@@ -17,6 +17,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AddHeroComponent } from './components/add-hero/add-hero.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     NavBarComponent,
     AddHeroComponent,
     SpinnerComponent,
+    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,
