@@ -10,11 +10,11 @@
     </div>
     <div>
       <button type="button" (click)="save()">Save</button>
+      <button (click)="goBack()">Back</button>
     </div>
-    <!-- <app-emoji-picker
+    <app-emoji-picker
       *ngIf="emojiService.showPicker"
       (emitEmoji)="changeEmoji($event)"
-    ></app-emoji-picker> -->
-    <button (click)="goBack()">Back</button>
+    ></app-emoji-picker>
   </div>
 </div>

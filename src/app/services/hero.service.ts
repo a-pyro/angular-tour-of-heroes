@@ -51,11 +51,6 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    // const storedHeroes = this.storageService.getItem<Hero[]>('heroes');
-    // if (!storedHeroes) {
-    //   this.storageService.setItem('heroes', this.heroes);
-    // }
-    // this.heroes = storedHeroes || this.heroes;
     return this.http
       .get<Hero[]>(this.#heroesUrl)
       .pipe(

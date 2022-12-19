@@ -19,10 +19,10 @@ export class HeroDetailComponent {
     private currentRoute: ActivatedRoute
   ) {}
 
-  // changeEmoji(s: string) {
-  //   if (!this.heroService.selectedHero) return;
-  //   this.heroService.selectedHero.emoji = s;
-  // }
+  changeEmoji(s: string) {
+    if (!this.hero) return;
+    this.hero.emoji = s;
+  }
 
   goBack() {
     this.location.back();

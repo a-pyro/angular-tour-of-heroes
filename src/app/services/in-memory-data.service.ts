@@ -8,16 +8,16 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   constructor() {}
   createDb() {
-    const heroes = [
-      { id: 12, name: 'Dr. Nice' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr. IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' },
+    const heroes: Hero[] = [
+      { id: 12, name: 'Dr. Nice', emoji: '🙂' },
+      { id: 13, name: 'Bombasto', emoji: '🙂' },
+      { id: 14, name: 'Celeritas', emoji: '🙂' },
+      { id: 15, name: 'Magneta', emoji: '🙂' },
+      { id: 16, name: 'RubberMan', emoji: '🙂' },
+      { id: 17, name: 'Dynama', emoji: '🙂' },
+      { id: 18, name: 'Dr. IQ', emoji: '🙂' },
+      { id: 19, name: 'Magma', emoji: '🙂' },
+      { id: 20, name: 'Tornado', emoji: '🙂' },
     ];
     return { heroes };
   }
