@@ -1,6 +1,7 @@
 <div class="flex">
   <div>
     <h2>Heroes</h2>
+    <app-spinner></app-spinner>
     <ul class="heroes">
       <li *ngFor="let hero of heroes">
         <button type="button" (click)="onSelect(hero)">
@@ -19,7 +20,7 @@
       </li>
     </ul>
   </div>
-  <div>
+  <div *ngIf="">
     <h2>Add new Hero</h2>
     <app-add-hero (heroEmit)="add($event)"> </app-add-hero>
   </div>
