@@ -3,11 +3,19 @@
     <h2>Heroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes">
-        <button class="mt-0 ml-0 pr-2" type="button" (click)="onSelect(hero)">
+        <button type="button" (click)="onSelect(hero)">
           <span class="badge">{{ hero.id }} </span>
           <span class="name">{{ hero.name }} </span>
           <span class="align-self-center ml-auto">{{ hero.emoji }} </span>
         </button>
+        <span
+          style="cursor: pointer"
+          class="delete align-self-center mx-1"
+          title="delete hero"
+          (click)="delete(hero)"
+        >
+          🚮
+        </span>
       </li>
     </ul>
   </div>

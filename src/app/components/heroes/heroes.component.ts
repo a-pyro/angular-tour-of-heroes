@@ -25,6 +25,12 @@ export class HeroesComponent {
     this.heroService.addHero(hero).subscribe((h) => this.heroes.push(h));
   }
 
+  delete(hero: Hero) {
+    this.heroService.deleteHero(hero).subscribe(() => {
+      this.heroes = this.heroes.filter((h) => h.id !== hero.id);
+    });
+  }
+
   ngOnInit() {
     this.getHeroes();
   }
