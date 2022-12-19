@@ -1,3 +1,3 @@
 # AngularTourOfHeroes
 
-🗺️ Small tutorial project to explore Angular.
+## Small tutorial project to explore Angular 🗺️
