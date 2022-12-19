@@ -2,4 +2,4 @@
 
 ## Small tutorial project to explore Angular 🗺️
 
-### [LIVE](angular-tour-of-heroes-blush.vercel.app) 🦹🏻‍♀️
+### [LIVE](https://angular-tour-of-heroes-a-pyro.vercel.app) 🦹🏻‍♀️
