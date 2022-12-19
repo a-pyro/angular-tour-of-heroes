@@ -21,6 +21,10 @@ export class HeroesComponent {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
 
+  add(hero: Hero) {
+    this.heroService.addHero(hero).subscribe((h) => this.heroes.push(h));
+  }
+
   ngOnInit() {
     this.getHeroes();
   }

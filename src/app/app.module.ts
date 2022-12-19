@@ -14,6 +14,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AddHeroComponent } from './components/add-hero/add-hero.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     MessagesComponent,
     DashboardComponent,
     NavBarComponent,
+    AddHeroComponent,
   ],
   imports: [
     BrowserModule,

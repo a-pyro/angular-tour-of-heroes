@@ -1,0 +1,9 @@
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" [(ngModel)]="localHero.name" /> {{ localHero.emoji }}
+  <app-emoji-picker (emitEmoji)="localHero.emoji = $event"> </app-emoji-picker>
+
+  <button type="button" class="add-button" (click)="emitHero(localHero)">
+    Add hero
+  </button>
+</div>
